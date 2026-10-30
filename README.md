@@ -84,7 +84,9 @@ $$E(\boldsymbol{\gamma}, \boldsymbol{\beta}) = \langle \boldsymbol{\gamma}, \bol
 
 A classical optimization algorithm (e.g., COBYLA, SPSA, ADAM, or Nelder-Mead) processes measurement outcomes and updates parameters to minimize $E(\boldsymbol{\gamma}, \boldsymbol{\beta})$:
 
-$$(\boldsymbol{\gamma}^*, \boldsymbol{\beta}^*) = \arg\min_{\boldsymbol{\gamma}, \boldsymbol{\beta}} E(\boldsymbol{\gamma}, \boldsymbol{\beta})$$
+$$
+(\boldsymbol{\gamma}^*, \boldsymbol{\beta}^*) = \arg\min_{\boldsymbol{\gamma}, \boldsymbol{\beta}} E(\boldsymbol{\gamma}, \boldsymbol{\beta})
+$$
 
 ---
 
@@ -97,8 +99,11 @@ To execute $\hat{U}_C(\gamma)$ and $\hat{U}_B(\beta)$ on gate-based quantum devi
 $$R_X(2\beta) = \begin{pmatrix} \cos\beta & -i\sin\beta \\ -i\sin\beta & \cos\beta \end{pmatrix}$$
 
 
-2. **Cost Layer $e^{-i \frac{\gamma}{2} (\hat{I} - \hat{Z}_i \hat{Z}_j)}$:** Implemented using two-qubit entangling gates. Ignoring global phase factors, $e^{i \gamma \hat{Z}_i \hat{Z}_j / 2}$ decomposes into standard $CNOT$ and $R_Z$ gates:
-$$\text{CNOT}_{i,j} \longrightarrow R_Z(2\gamma)_j \longrightarrow \text{CNOT}_{i,j}$$
+2. **Cost Layer $e^{-i \frac{\gamma}{2} (\hat{I} - \hat{Z}_i \hat{Z}_j)}$:** Implemented using two-qubit entangling gates. Ignoring global phase factors, $e^{i \gamma \hat{Z}_i \hat{Z}_j / 2}$ decomposes into standard $\text{CNOT}$ and $R_Z$ gates:
+
+$$
+\text{CNOT}_{i,j} \longrightarrow R_Z(2\gamma)_j \longrightarrow \text{CNOT}_{i,j}
+$$
 
 
 
